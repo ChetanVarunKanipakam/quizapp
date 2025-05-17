@@ -1,17 +1,13 @@
 import 'package:flutter/material.dart';
 
 class HmeScreen extends StatelessWidget {
-  const HmeScreen({super.key});
+  const HmeScreen(this.startQuiz,{super.key});
+
+  final void Function() startQuiz;
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        gradient: LinearGradient(colors: [const Color.fromARGB(255, 134, 85, 174),const Color.fromARGB(255, 96, 3, 139)],
-        begin: Alignment.bottomLeft,
-        end: Alignment.topRight)
-      ),
-      child: Center(
+    return Center(
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
@@ -24,15 +20,16 @@ class HmeScreen extends StatelessWidget {
             ),
             SizedBox(height: 30),
             OutlinedButton.icon(
-              onPressed: () {},
+              onPressed: startQuiz,
               style: OutlinedButton.styleFrom(
                 foregroundColor: const Color.fromARGB(255, 255, 255, 255),
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+                overlayColor: const Color.fromARGB(255, 144, 142, 151),
               ),
               icon:Icon(Icons.arrow_right_alt),
               label: Text("Start Quiz")),
           ],
-        ),
-      ),
+        )
     );
   }
 }

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:basicquizapp/hme_screen.dart';
+import 'package:basicquizapp/quiz.dart';
 
 
 void main() {
@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(home: Scaffold(body: HmeScreen()));
+    return const Quiz();
   }
 }
 
