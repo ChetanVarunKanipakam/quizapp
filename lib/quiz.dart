@@ -3,6 +3,7 @@ import 'package:basicquizapp/question_screen.dart';
 import 'package:flutter/material.dart';
 
 import 'package:basicquizapp/hme_screen.dart';
+import 'package:basicquizapp/result_screen.dart';
 
 class Quiz extends StatefulWidget {
   const Quiz({super.key});
@@ -39,12 +40,19 @@ class _Quiz extends State<Quiz> {
     if ( selectedAnswers.length== questions.length){
       setState(() {
         selectedAnswers=[];
-        activeScreen='start-screen';
+        activeScreen='results-screen';
       });
     }
   }
   @override
   Widget build(BuildContext context) {
+    Widget screenselector=HmeScreen(switchScreen);
+    if(activeScreen=='question-screen'){
+      screenselector=QuestionScreen(onselectedAnswer: addSelectedanswer);
+    }
+    else if(activeScreen=='results-screen'){
+      screenselector=ResultScreen();
+    }
     return MaterialApp(
       home: Scaffold(
         body: Container(
@@ -58,9 +66,7 @@ class _Quiz extends State<Quiz> {
               end: Alignment.topRight,
             ),
           ),
-          child: activeScreen == 'start-screen'
-                  ? HmeScreen(switchScreen)
-                  : QuestionScreen(onselectedAnswer: addSelectedanswer),
+          child: screenselector ,
         ),
       ),
     );
