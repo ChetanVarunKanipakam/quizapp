@@ -3,4 +3,10 @@ class QuizQuestion {
 
   final String question;
   final List<String> answers;
+
+  List<String> questionShuffle(List<String> onanswers){
+    List<String> ans=List.of(onanswers);
+    ans.shuffle();
+    return ans;
+  }
 }

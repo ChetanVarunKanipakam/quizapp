@@ -10,9 +10,9 @@ class AnswerButton extends StatelessWidget {
            style: ElevatedButton.styleFrom(
               foregroundColor: Colors.white,
               backgroundColor: Colors.deepPurple,
-              padding: EdgeInsets.symmetric(horizontal: 40,vertical: 15)
+              padding: EdgeInsets.symmetric(horizontal: 40,vertical: 15),
            ),
-           child: Text(answerText),
+           child: Text(answerText,textAlign: TextAlign.center,),
            );
   }
 }

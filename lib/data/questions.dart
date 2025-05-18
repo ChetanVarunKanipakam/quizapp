@@ -10,7 +10,7 @@ const questions=[
         "me",
         "u",
         "chetan",
-        "zen"]),
+        "zenitsu hokage onepiece anime for all the powerful people come from people powerful"]),
   QuizQuestion('who are you2?', [
         "me",
         "u",
